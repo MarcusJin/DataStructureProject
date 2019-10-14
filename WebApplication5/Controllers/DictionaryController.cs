@@ -19,38 +19,42 @@ namespace WebApplication5.Controllers
         {
             string Tstring = "New Entry " + (DictList.Count + 1);
             DictList.Add(Tstring, DictList.Count);
-            Tstring = "New Entry " + DictList.Count;
-            ViewBag.localButton = Tstring;
+            string displayString = "Added: New Entry " + DictList.Count;
+            ViewBag.localButton = displayString;
             return View("Index");
         }
         //add a big list to the dictionary
         public ActionResult AddBiglist()
         {
-            int bigBumber = 1000;
-            string Bstring = bigBumber + " items were added.";
-            for (int i = 0; i <= bigBumber; i++)
+            int bigNumber = 1000;
+            string Bstring = bigNumber + " items were added (Click Display to see your dictionary).";
+
+            for (int iCount = 0; iCount <= bigNumber; iCount++)
             {
                 Add2Dictionary();
             };
+
             ViewBag.localButton = Bstring;
             return View("Index");
         }
         //displays the dictionary on the webpage
         public ActionResult Display()
         {
-            string Bstring = "";
+            string webDisplay = "Your Dictionary Contains:" + "<br>";
+
             if (DictList.Count > 0)
-            {
+            { //displays the key and value
                 foreach (var item in DictList)
                 {
-                    Bstring += "Key: " + item.Key + " Value: " + item.Value;
+                    webDisplay += "Key: " + item.Key + " Value: " + item.Value + "<br>";
                 };
             }
             else
-            {
-                Bstring = "EMPTY DICTIONARY!!!";
+            { //if it's empty displays a message
+                webDisplay = "EMPTY DICTIONARY!!!";
             }
-            ViewBag.localButton = Bstring;
+
+            ViewBag.localButton = webDisplay;
             return View("Index");
         }
 
