@@ -48,7 +48,7 @@ namespace WebApplication5.Controllers
             }
             else
             {
-                Bstring = "no DICTIONARY!!!";
+                Bstring = "No DICTIONARY!!!";
             }
             ViewBag.localButton = Bstring;
             return View("Index");
@@ -59,7 +59,7 @@ namespace WebApplication5.Controllers
             string Item1 = "An item was deleted, but which one?";
             if (DictList.Count == 0)
             {
-                Item1 = "you dont have any dicts....";
+                Item1 = "You dont have any dictionaries....";
             }
             else
             {
@@ -71,7 +71,7 @@ namespace WebApplication5.Controllers
 
         public ActionResult Clear()
         {
-            string DictClear = "Your Dict is clear now.";
+            string DictClear = "Your Dictionary is clear now.";
 
             DictList.Clear();
             ViewBag.localButton = DictClear;
@@ -84,11 +84,11 @@ namespace WebApplication5.Controllers
             if (DictList.Count > 0)
             {
 
-                Hole = "You found a Dictionary!>>" + DictList[0];
+                Hole = "You found a Dictionary!" + DictList[0];
             }
             else
             {
-                Hole = "you do not have any Dictionaries Count is.." + DictList.Count;
+                Hole = "You do not have any Dictionaries. Count is.." + DictList.Count;
             }
             ViewBag.localButton = Hole;
             return View("Index");
