@@ -14,41 +14,41 @@ namespace WebApplication5.Controllers
         {
             return View();
         }
+        //add stuff to the dictionary
         public ActionResult Add2Dictionary()
         {
-            string Tstring = "added Key number " + (DictList.Count + 1);
+            string Tstring = "New Entry " + (DictList.Count + 1);
             DictList.Add(DictList.Count, Tstring);
-            Tstring = "added Key number " + DictList.Count;
+            Tstring = "New Entry " + DictList.Count;
             ViewBag.localButton = Tstring;
             return View("Index");
         }
-
+        //add a big list to the dictionary
         public ActionResult AddBiglist()
         {
             int bigBumber = 1000;
-            string Bstring = bigBumber + "items were added";
+            string Bstring = bigBumber + " items were added.";
             for (int i = 0; i <= bigBumber; i++)
             {
                 Add2Dictionary();
-
             };
             ViewBag.localButton = Bstring;
             return View("Index");
         }
+        //displays the dictionary on the webpage
         public ActionResult Display()
         {
-            string Bstring = 1000 + "Dictionary....";
+            string Bstring = 1000 + "Dictionary...";
             if (DictList.Count > 0)
             {
                 foreach (var item in DictList)
                 {
-
                     Bstring += "Key: " + item.Key + " Value: " + item.Value;
                 };
             }
             else
             {
-                Bstring = "No DICTIONARY!!!";
+                Bstring = "EMPTY DICTIONARY!!!";
             }
             ViewBag.localButton = Bstring;
             return View("Index");
@@ -59,7 +59,7 @@ namespace WebApplication5.Controllers
             string Item1 = "An item was deleted, but which one?";
             if (DictList.Count == 0)
             {
-                Item1 = "You dont have any dictionaries....";
+                Item1 = "You don't have any items in your dictionary... Please add an item instead of trying to delete from nothing.";
             }
             else
             {
@@ -88,7 +88,7 @@ namespace WebApplication5.Controllers
             }
             else
             {
-                Hole = "You do not have any Dictionaries. Count is.." + DictList.Count;
+                Hole = "This is empty. Please add something to the dictionary before trying to search. " + DictList.Count;
             }
             ViewBag.localButton = Hole;
             return View("Index");

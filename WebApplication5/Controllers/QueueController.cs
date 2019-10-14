@@ -18,7 +18,7 @@ namespace WebApplication5.Controllers
             return View();
         }
 
-        //add to queue
+        //add to queue method
         public ActionResult addToQueue()
         {
             int size = theQueue.Count() + 1;
@@ -38,7 +38,7 @@ namespace WebApplication5.Controllers
             {
                 addToQueue();
             }
-            ViewBag.theQueue = "HUGE!";
+            ViewBag.theQueue
             return View("Index");
         }
 
