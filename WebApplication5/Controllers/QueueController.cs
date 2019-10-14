@@ -34,7 +34,7 @@ namespace WebApplication5.Controllers
             //remove everything from the queue
             clearQueue();
             //add 2000 to queue
-            for (int i = 2000; i > 0; i--)
+            for (int iCount = 2000; iCount > 0; iCount--)
             {
                 addToQueue();
             }
