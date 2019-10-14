@@ -18,5 +18,10 @@ namespace WebApplication5.Controllers
         {
             return Redirect("http://www.linkedin.com/in/marcus-jin");
         }
+
+        public ActionResult StylishExit()
+        {
+            return Redirect("https://www.byu.edu");
+        }
     }
 }
