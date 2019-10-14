@@ -1,0 +1,45 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Queue</title>
+</head>
+<body>
+    <div class="container">
+        <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:18%">
+            <h3 class="w3-bar-item">Option</h3>
+            <a href="@Url.Action("addToQueue", "Queue")"
+               class="w3-bar-item w3-button">Add one item to Queue</a>
+            <a href="@Url.Action("addListToQueue", "Queue")"
+               class="w3-bar-item w3-button">Add Huge List of Items to Queue</a>
+            <a href="@Url.Action("displayQueue", "Queue")"
+               class="w3-bar-item w3-button">Display Queue</a>
+            <a href="@Url.Action("deleteItem", "Queue")"
+               class="w3-bar-item w3-button">Delete from Queue</a>
+            <a href="@Url.Action("clearQueue", "Queue")"
+               class="w3-bar-item w3-button">Clear Queue</a>
+            <a href="@Url.Action("searchQueue", "Queue")"
+               class="w3-bar-item w3-button">Search Queue</a>
+            <a href="@Url.Action("Menu", "Queue")"
+               class="w3-bar-item w3-button">Return to Main Menu</a>
+        </div>
+        <div style="margin-left:18%">
+            <div class="w3-container w3-blue-grey">
+                <h1>Queue</h1>
+            </div>
+            <div class="w3-body">
+                @foreach (var AddString in ViewBag.theQueue)
+                {
+                    <p>@AddString</p>
+                }
+
+            </div>
+        </div>
+        <div class="modal-footer">
+
+        </div>
+    </div>
+</body>
+</html>
