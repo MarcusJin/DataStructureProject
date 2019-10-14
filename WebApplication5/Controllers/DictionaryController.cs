@@ -9,7 +9,7 @@ namespace WebApplication5.Controllers
     public class DictionaryController : Controller
     { 
         // GET: Dictionary
-        static public Dictionary<int, string> DictList = new Dictionary<int, string>();
+        static public Dictionary<string, int> DictList = new Dictionary<string, int>();
         public ActionResult Index()
         {
             return View();
@@ -18,7 +18,7 @@ namespace WebApplication5.Controllers
         public ActionResult Add2Dictionary()
         {
             string Tstring = "New Entry " + (DictList.Count + 1);
-            DictList.Add(DictList.Count, Tstring);
+            DictList.Add(Tstring, DictList.Count);
             Tstring = "New Entry " + DictList.Count;
             ViewBag.localButton = Tstring;
             return View("Index");
@@ -38,7 +38,7 @@ namespace WebApplication5.Controllers
         //displays the dictionary on the webpage
         public ActionResult Display()
         {
-            string Bstring = 1000 + "Dictionary...";
+            string Bstring = "";
             if (DictList.Count > 0)
             {
                 foreach (var item in DictList)
@@ -63,7 +63,7 @@ namespace WebApplication5.Controllers
             }
             else
             {
-                DictList.Remove(1);
+                DictList.Remove("New Entry 1");
             }
             ViewBag.localButton = Item1;
             return View("Index");
@@ -84,7 +84,7 @@ namespace WebApplication5.Controllers
             if (DictList.Count > 0)
             {
 
-                Hole = "You found a Dictionary!" + DictList[0];
+                Hole = "You found a Dictionary!" + DictList["New Entry 1"];
             }
             else
             {
