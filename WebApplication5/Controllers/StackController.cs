@@ -51,7 +51,7 @@ namespace WebApplication5.Controllers
             string stringToFind = "An item was deleted, but which one?";
             if (MyStack.Count == 0)
             {
-                stringToFind = "Stack is Empty";
+                stringToFind = "Stack is empty.";
             }
             else
             {
@@ -75,11 +75,11 @@ namespace WebApplication5.Controllers
             string line;
             if (MyStack.Count > 0)
             {
-                line = "You found the stack!>>" + MyStack.Peek();
+                line = "You found the stack!" + MyStack.Peek();
             }
             else
             {
-                line = "you do not have any Dictionaries Count is.." + MyStack.Count;
+                line = "You do not have anything in stack. Count is..." + MyStack.Count;
             }
             ViewBag.MyStack = line;
             return View("Index");

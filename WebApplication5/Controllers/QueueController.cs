@@ -48,7 +48,7 @@ namespace WebApplication5.Controllers
             //error message
             if (!theQueue.Any())
             {
-                display = "ERROR: There is nothing in the Queue, Let's add something.";
+                display = "ERROR: There is nothing in the Queue, let's add something.";
             }
             else
             {
@@ -65,12 +65,12 @@ namespace WebApplication5.Controllers
         {
             if (!theQueue.Any())
             {
-                display = "ERROR: There is nothing in the Queue, Let's add something.";
+                display = "ERROR: There is nothing in the Queue, let's add something.";
             }
             else
             {
                 theQueue.Dequeue();
-                display = "Last Item deleted from queue.";
+                display = "Last item deleted from queue.";
             }
             ViewBag.theQueue = display;
             return View("Index");
