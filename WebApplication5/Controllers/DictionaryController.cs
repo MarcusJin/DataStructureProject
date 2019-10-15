@@ -26,6 +26,7 @@ namespace WebApplication5.Controllers
         //add a big list to the dictionary
         public ActionResult AddBiglist()
         {
+            
             int bigNumber = 1000;
             string Bstring = bigNumber + " items were added (Click Display to see your dictionary).";
 
@@ -40,6 +41,7 @@ namespace WebApplication5.Controllers
         //displays the dictionary on the webpage
         public ActionResult Display()
         {
+            
             string webDisplay = "Your Dictionary Contains:" + "<br>";
 
             if (DictList.Count > 0)
@@ -60,6 +62,7 @@ namespace WebApplication5.Controllers
 
         public ActionResult DeleteDictionary()
         {
+            
             string Item1 = "An item was deleted, but which one?";
             if (DictList.Count == 0)
             {
@@ -75,6 +78,7 @@ namespace WebApplication5.Controllers
 
         public ActionResult Clear()
         {
+            
             string DictClear = "Your Dictionary is clear now.";
 
             DictList.Clear();
@@ -84,11 +88,12 @@ namespace WebApplication5.Controllers
         }
         public ActionResult Search()
         {
+            
             string Hole;
             if (DictList.Count > 0)
             {
 
-                Hole = "You found a Dictionary!" + DictList["New Entry 1"];
+                Hole = "You found a Dictionary! " + DictList["New Entry 1"];
             }
             else
             {

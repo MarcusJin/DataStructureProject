@@ -38,7 +38,7 @@ namespace WebApplication5.Controllers
             {
                 addToQueue();
             }
-            ViewBag.theQueue
+            ViewBag.theQueue 
             return View("Index");
         }
 
